@@ -822,7 +822,7 @@ h4 {
 }
 
 .betnero_menu-open .betnero_menu {
-  left: 0;
+  left: 0 !important;
 }
 
 .betnero_logged-in {
@@ -1020,6 +1020,10 @@ footer {
 .betnero_promotions .betnero_promotions__first-line {
   font-weight: 700;
   font-size: 66px;
+}
+
+.betnero_promotions .betnero_promotions__second-line {
+  display: block;
 }
 
 .betnero_promotions .betnero_promotions__thirt-line {
@@ -1748,7 +1752,7 @@ footer {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-    min-width: none;
+    min-width: initial;
     text-align: left;
   }
 
