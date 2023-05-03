@@ -2025,8 +2025,8 @@ footer {
   }
 
   .betnero_bonus .betnero_button {
-    margin-top: 40px;
-    margin-bottom: 50px;
+    margin-top: 40px !important;
+    margin-bottom: 50px !important;
   }
 
   .betnero_mostra .betnero_mostra__content {
