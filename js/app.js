@@ -3319,7 +3319,7 @@
                 speed: 800,
                 loop: true,
                 autoplay: {
-                    delay: 5e3,
+                    delay: 4e3,
                     disableOnInteraction: false
                 },
                 breakpoints: {
@@ -4540,6 +4540,14 @@
             for (let i = 0; i < elements3line.length - 1; i++) elements3line[i].classList.add("betnero_separator");
             for (let i = 0; i < elements4line.length - 1; i++) elements4line[i].classList.add("betnero_separator");
         }
+        document.addEventListener("DOMContentLoaded", (function() {
+            const responsiveBlock = document.querySelector(".responsive-block");
+            const footer = document.querySelector(".betnero_footer");
+            window.addEventListener("scroll", (function() {
+                const footerRect = footer.getBoundingClientRect();
+                if (footerRect.top < window.innerHeight) responsiveBlock.classList.add("betnero_hide-mobile-footer"); else responsiveBlock.classList.remove("betnero_hide-mobile-footer");
+            }));
+        }));
         window["FLS"] = false;
         isWebp();
         menuInit();
