@@ -90,7 +90,6 @@ h6 {
           flex-direction: column;
   overflow: hidden;
   width: 100%;
-  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -116,12 +115,6 @@ h6 {
 Наприклад header__container, main__container і т.п.
 Сніппет (HTML): cnt
 */
-
-[class*=__container] {
-  max-width: 67rem;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
 
 .spollers {
   display: -ms-grid;
@@ -249,6 +242,54 @@ body {
   background: #1C2747;
 }
 
+/* Для полосы прокрутки на всей странице */
+
+::-webkit-scrollbar {
+  /* Ширина полосы прокрутки */
+}
+
+/* Для трека (основной фон) полосы прокрутки */
+
+::-webkit-scrollbar-track {
+  background: rgba(87, 121, 222, 0.0078431373);
+  /* Цвет фона трека */
+}
+
+/* Для дорожки (заполненной части) полосы прокрутки */
+
+::-webkit-scrollbar-thumb {
+  background: rgba(19, 28, 56, 0.5058823529);
+  /* Цвет дорожки */
+}
+
+/* Для кнопки прокрутки вверх */
+
+::-webkit-scrollbar-button {
+  background-color: rgba(204, 204, 204, 0);
+  /* Цвет кнопки */
+}
+
+/* Для кнопки прокрутки вниз */
+
+::-webkit-scrollbar-button:end:increment {
+  background-color: rgba(204, 204, 204, 0);
+  /* Цвет кнопки */
+}
+
+/* Для кнопки прокрутки вверх при наведении курсора */
+
+::-webkit-scrollbar-button:hover {
+  background-color: #060f2a;
+  /* Цвет кнопки при наведении */
+}
+
+/* Для кнопки прокрутки вниз при наведении курсора */
+
+::-webkit-scrollbar-button:end:increment:hover {
+  background-color: #060f2a;
+  /* Цвет кнопки при наведении */
+}
+
 h1,
 h2,
 h3,
@@ -269,7 +310,6 @@ h4 {
   content: "";
   display: block;
   position: absolute;
-  bottom: -35px;
   left: 0;
   width: 100%;
   height: 49px;
@@ -287,8 +327,6 @@ h4 {
   content: "";
   display: block;
   position: absolute;
-  bottom: -35px;
-  left: 0;
   width: 100%;
   height: 49px;
   background: url("../img/bg-decor-2.svg") 0 0 no-repeat;
@@ -298,6 +336,8 @@ h4 {
 .betnero_bg-color-1::after,
 .betnero_bg-color-2::after {
   bottom: -48px;
+  left: 0;
+  background-size: contain;
 }
 
 .betnero_section .betnero_section__col-left {
@@ -509,6 +549,12 @@ h4 {
           align-items: center;
 }
 
+.betnero_header .betnero_header__mobile-line .betnero_menu__search {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .betnero_header__logo {
   display: block;
   margin-bottom: 40px;
@@ -685,6 +731,23 @@ h4 {
   margin-bottom: 24px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3019607843);
   z-index: 100;
+  width: 100%;
+  padding-left: 5px;
+}
+
+.betnero_header .betnero_menu__search a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 85px;
+  padding: 0 6px 6px 0;
+  gap: 5px;
 }
 
 .betnero_header .betnero_menu__link {
@@ -1271,7 +1334,7 @@ footer {
 
 .betnero_provider__line-1 {
   position: absolute;
-  top: 12%;
+  top: 11%;
   left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1299,42 +1362,8 @@ footer {
   height: 100%;
   -webkit-clip-path: polygon(8.3% 0, 100% 0%, 91.9% 100%, 0% 100%);
           clip-path: polygon(8.3% 0, 100% 0%, 91.9% 100%, 0% 100%);
-}
-
-@-webkit-keyframes run-string {
-  0% {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
-  }
-
-  100% {
-    -webkit-transform: translate(-80%, 0);
-            transform: translate(-80%, 0);
-  }
-}
-
-@keyframes run-string {
-  0% {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
-  }
-
-  100% {
-    -webkit-transform: translate(-80%, 0);
-            transform: translate(-80%, 0);
-  }
-}
-
-.betnero_provider .betnero_move__strings._watcher-view .betnero_provider__line-1,
-.betnero_provider .betnero_move__strings._watcher-view .betnero_provider__line-2 {
-  -webkit-animation-name: run-string;
-          animation-name: run-string;
-  -webkit-animation-duration: 100s;
-          animation-duration: 100s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  overflow-y: hidden;
+  overflow-x: scroll;
 }
 
 .betnero_faq .spollers {
@@ -1459,262 +1488,6 @@ footer {
 
 .swiper-button-lock {
   display: none !important;
-}
-
-[data-simplebar] {
-  position: relative;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -ms-flex-line-pack: start;
-      align-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-}
-
-.simplebar-wrapper {
-  overflow: hidden;
-  width: inherit;
-  height: inherit;
-  max-width: inherit;
-  max-height: inherit;
-}
-
-.simplebar-mask {
-  direction: inherit;
-  position: absolute;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: auto !important;
-  height: auto !important;
-  z-index: 0;
-}
-
-.simplebar-offset {
-  direction: inherit !important;
-  -webkit-box-sizing: inherit !important;
-          box-sizing: inherit !important;
-  resize: none !important;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  padding: 0;
-  margin: 0;
-  -webkit-overflow-scrolling: touch;
-}
-
-.simplebar-content-wrapper {
-  direction: inherit;
-  -webkit-box-sizing: border-box !important;
-          box-sizing: border-box !important;
-  position: relative;
-  display: block;
-  height: 100%;
-  /* Required for horizontal native scrollbar to not appear if parent is taller than natural height */
-  width: auto;
-  max-width: 100%;
-  /* Not required for horizontal scroll to trigger */
-  max-height: 100%;
-  /* Needed for vertical scroll to trigger */
-  overflow: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.simplebar-content-wrapper::-webkit-scrollbar,
-.simplebar-hide-scrollbar::-webkit-scrollbar {
-  display: none;
-  width: 0;
-  height: 0;
-}
-
-.simplebar-content:before,
-.simplebar-content:after {
-  content: " ";
-  display: table;
-}
-
-.simplebar-placeholder {
-  max-height: 100%;
-  max-width: 100%;
-  width: 100%;
-  pointer-events: none;
-}
-
-.simplebar-height-auto-observer-wrapper {
-  -webkit-box-sizing: inherit !important;
-          box-sizing: inherit !important;
-  height: 100%;
-  width: 100%;
-  max-width: 1px;
-  position: relative;
-  float: left;
-  max-height: 1px;
-  overflow: hidden;
-  z-index: -1;
-  padding: 0;
-  margin: 0;
-  pointer-events: none;
-  -webkit-box-flex: inherit;
-      -ms-flex-positive: inherit;
-          flex-grow: inherit;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  -ms-flex-preferred-size: 0;
-      flex-basis: 0;
-}
-
-.simplebar-height-auto-observer {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-  display: block;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 1000%;
-  width: 1000%;
-  min-height: 1px;
-  min-width: 1px;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: -1;
-}
-
-.simplebar-track {
-  z-index: 1;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-[data-simplebar].simplebar-dragging {
-  pointer-events: none;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-[data-simplebar].simplebar-dragging .simplebar-content {
-  pointer-events: none;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-[data-simplebar].simplebar-dragging .simplebar-track {
-  pointer-events: all;
-}
-
-.simplebar-scrollbar {
-  position: absolute;
-  left: 0;
-  right: 0;
-  min-height: 10px;
-}
-
-.simplebar-scrollbar:before {
-  position: absolute;
-  content: "";
-  background: black;
-  border-radius: 7px;
-  left: 2px;
-  right: 2px;
-  opacity: 0;
-  -webkit-transition: opacity 0.2s 0.5s linear;
-  -o-transition: opacity 0.2s 0.5s linear;
-  transition: opacity 0.2s 0.5s linear;
-}
-
-.simplebar-scrollbar.simplebar-visible:before {
-  opacity: 0.5;
-  -webkit-transition-delay: 0s;
-       -o-transition-delay: 0s;
-          transition-delay: 0s;
-  -webkit-transition-duration: 0s;
-       -o-transition-duration: 0s;
-          transition-duration: 0s;
-}
-
-.simplebar-track.simplebar-vertical {
-  top: 0;
-  width: 11px;
-}
-
-.simplebar-scrollbar:before {
-  top: 2px;
-  bottom: 2px;
-  left: 2px;
-  right: 2px;
-}
-
-.simplebar-track.simplebar-horizontal {
-  left: 0;
-  height: 11px;
-}
-
-.simplebar-track.simplebar-horizontal .simplebar-scrollbar {
-  right: auto;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  min-height: 0;
-  min-width: 10px;
-  width: auto;
-}
-
-/* Rtl support */
-
-[data-simplebar-direction=rtl] .simplebar-track.simplebar-vertical {
-  right: auto;
-  left: 0;
-}
-
-.simplebar-dummy-scrollbar-size {
-  direction: rtl;
-  position: fixed;
-  opacity: 0;
-  visibility: hidden;
-  height: 500px;
-  width: 500px;
-  overflow-y: hidden;
-  overflow-x: scroll;
-  -ms-overflow-style: scrollbar !important;
-}
-
-.simplebar-dummy-scrollbar-size > div {
-  width: 200%;
-  height: 200%;
-  margin: 10px 0;
-}
-
-.simplebar-hide-scrollbar {
-  position: fixed;
-  left: 0;
-  visibility: hidden;
-  overflow-y: scroll;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
 
 @media (min-width: 26.25em) {
@@ -1909,13 +1682,13 @@ footer {
   }
 
   .betnero_provider__line-1 {
-    gap: 60px;
-    top: 5%;
+    gap: 50px;
+    top: 2%;
   }
 
   .betnero_provider__line-2 {
-    gap: 60px;
-    bottom: 5%;
+    gap: 50px;
+    bottom: 3%;
   }
 
   .betnero_provider .betnero_banners-hidden {
@@ -2081,6 +1854,14 @@ footer {
     margin-bottom: 60px;
   }
 
+  .betnero_provider__line-1 {
+    gap: 60px;
+  }
+
+  .betnero_provider__line-2 {
+    gap: 60px;
+  }
+
   .betnero_faq {
     margin-top: -50px;
     padding-top: 70px;
@@ -2111,16 +1892,6 @@ footer {
   }
 }
 
-@media (min-width: 68.75em) {
-  .betnero_provider__line-1 {
-    top: 10%;
-  }
-
-  .betnero_provider__line-2 {
-    bottom: 10%;
-  }
-}
-
 @media (min-width: 69.375em) {
   .betnero_section h2.betnero_section__title {
     margin: 0 auto 45px 65px;
@@ -2140,13 +1911,61 @@ footer {
   }
 }
 
-@media (min-width: 82.8125em) {
-  .betnero_header {
-    left: calc(50% - 662px);
+@media (min-width: 71.875em) {
+  .betnero_provider__line-1 {
+    top: 10%;
+  }
+
+  .betnero_provider__line-2 {
+    bottom: 10%;
   }
 }
 
-@media (min-width: 67em) {
+@media (min-width: 90em) {
+  .betnero_bg-color-1::after,
+  .betnero_bg-color-2::after {
+    height: 4.5vw;
+    bottom: -4vw;
+  }
+}
+
+@media (min-width: 120em) {
+  .betnero_wrapper {
+    padding-left: 350px;
+  }
+
+  .betnero_header {
+    width: 350px;
+  }
+
+  .betnero_header__logo img {
+    width: 250px;
+  }
+
+  .betnero_header__button-login {
+    width: 145px;
+    height: 50px;
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .betnero_header__button-reg {
+    width: 145px;
+    height: 50px;
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+
+@media (min-width: 160em) {
+  [class*=__container] {
+    padding-left: 1rem;
+  }
+
+  [class*=__container] {
+    padding-right: 1rem;
+  }
+
   .betnero_section .betnero_section__container {
     padding-top: 6rem;
   }
@@ -2222,6 +2041,14 @@ footer {
 }
 
 @media (max-width: 20em) {
+  [class*=__container] {
+    padding-left: 0.9375rem;
+  }
+
+  [class*=__container] {
+    padding-right: 0.9375rem;
+  }
+
   .betnero_section .betnero_section__container {
     padding-top: 3.75rem;
   }
@@ -2258,6 +2085,11 @@ footer {
     margin-bottom: 0;
   }
 
+  .betnero_header .betnero_header__logo-pc,
+  .betnero_header .betnero_header__buttons {
+    display: none;
+  }
+
   .betnero_header form {
     margin-bottom: 0;
     -webkit-box-orient: horizontal;
@@ -2284,6 +2116,14 @@ footer {
 
   .betnero_header .betnero_menu__search {
     margin-bottom: 0;
+    border: initial;
+  }
+
+  .betnero_header .betnero_menu__search a {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0;
   }
 
   .betnero_icon-menu {
@@ -2291,7 +2131,6 @@ footer {
     position: relative;
     width: 1.875rem;
     height: 1.125rem;
-    margin-right: 99px;
     z-index: 100;
   }
 
@@ -2452,76 +2291,100 @@ footer {
   }
 }
 
-@media (min-width: 20em) and (max-width: 67em) {
-@supports (padding-top: clamp( 3.75rem , 2.7925531915rem  +  4.7872340426vw , 6rem )) {
+@media (min-width: 20em) and (max-width: 160em) {
+@supports (padding-left: clamp( 0.9375rem , 0.9285714286rem  +  0.0446428571vw , 1rem )) {
+    [class*=__container] {
+      padding-left: clamp( 0.9375rem , 0.9285714286rem  +  0.0446428571vw , 1rem );
+    }
+}
+
+@supports not (padding-left: clamp( 0.9375rem , 0.9285714286rem  +  0.0446428571vw , 1rem )) {
+    [class*=__container] {
+      padding-left: calc(0.9375rem + 0.0625 * (100vw - 20rem) / 140);
+    }
+}
+
+@supports (padding-right: clamp( 0.9375rem , 0.9285714286rem  +  0.0446428571vw , 1rem )) {
+    [class*=__container] {
+      padding-right: clamp( 0.9375rem , 0.9285714286rem  +  0.0446428571vw , 1rem );
+    }
+}
+
+@supports not (padding-right: clamp( 0.9375rem , 0.9285714286rem  +  0.0446428571vw , 1rem )) {
+    [class*=__container] {
+      padding-right: calc(0.9375rem + 0.0625 * (100vw - 20rem) / 140);
+    }
+}
+
+@supports (padding-top: clamp( 3.75rem , 3.4285714286rem  +  1.6071428571vw , 6rem )) {
     .betnero_section .betnero_section__container {
-      padding-top: clamp( 3.75rem , 2.7925531915rem  +  4.7872340426vw , 6rem );
+      padding-top: clamp( 3.75rem , 3.4285714286rem  +  1.6071428571vw , 6rem );
     }
 }
 
-@supports not (padding-top: clamp( 3.75rem , 2.7925531915rem  +  4.7872340426vw , 6rem )) {
+@supports not (padding-top: clamp( 3.75rem , 3.4285714286rem  +  1.6071428571vw , 6rem )) {
     .betnero_section .betnero_section__container {
-      padding-top: calc(3.75rem + 2.25 * (100vw - 20rem) / 47);
+      padding-top: calc(3.75rem + 2.25 * (100vw - 20rem) / 140);
     }
 }
 
-@supports (padding-bottom: clamp( 2.5rem , -0.3191489362rem  +  14.0957446809vw , 9.125rem )) {
+@supports (padding-bottom: clamp( 2.5rem , 1.5535714286rem  +  4.7321428571vw , 9.125rem )) {
     .betnero_promotions__container {
-      padding-bottom: clamp( 2.5rem , -0.3191489362rem  +  14.0957446809vw , 9.125rem );
+      padding-bottom: clamp( 2.5rem , 1.5535714286rem  +  4.7321428571vw , 9.125rem );
     }
 }
 
-@supports not (padding-bottom: clamp( 2.5rem , -0.3191489362rem  +  14.0957446809vw , 9.125rem )) {
+@supports not (padding-bottom: clamp( 2.5rem , 1.5535714286rem  +  4.7321428571vw , 9.125rem )) {
     .betnero_promotions__container {
-      padding-bottom: calc(2.5rem + 6.625 * (100vw - 20rem) / 47);
+      padding-bottom: calc(2.5rem + 6.625 * (100vw - 20rem) / 140);
     }
 }
 
-@supports (font-size: clamp( 1.125rem , 0.8856382979rem  +  1.1968085106vw , 1.6875rem )) {
+@supports (font-size: clamp( 1.125rem , 1.0446428571rem  +  0.4017857143vw , 1.6875rem )) {
     .betnero_promotions__button-registrati {
-      font-size: clamp( 1.125rem , 0.8856382979rem  +  1.1968085106vw , 1.6875rem );
+      font-size: clamp( 1.125rem , 1.0446428571rem  +  0.4017857143vw , 1.6875rem );
     }
 }
 
-@supports not (font-size: clamp( 1.125rem , 0.8856382979rem  +  1.1968085106vw , 1.6875rem )) {
+@supports not (font-size: clamp( 1.125rem , 1.0446428571rem  +  0.4017857143vw , 1.6875rem )) {
     .betnero_promotions__button-registrati {
-      font-size: calc(1.125rem + 0.5625 * (100vw - 20rem) / 47);
+      font-size: calc(1.125rem + 0.5625 * (100vw - 20rem) / 140);
     }
 }
 
-@supports (margin-bottom: clamp( 0.0000000625rem , -3.4574467194rem  +  17.2872339096vw , 8.125rem )) {
+@supports (margin-bottom: clamp( 0.0000000625rem , -1.1607142143rem  +  5.8035713839vw , 8.125rem )) {
     .betnero_nuove .betnero_button {
-      margin-bottom: clamp( 0.0000000625rem , -3.4574467194rem  +  17.2872339096vw , 8.125rem );
+      margin-bottom: clamp( 0.0000000625rem , -1.1607142143rem  +  5.8035713839vw , 8.125rem );
     }
 }
 
-@supports not (margin-bottom: clamp( 0.0000000625rem , -3.4574467194rem  +  17.2872339096vw , 8.125rem )) {
+@supports not (margin-bottom: clamp( 0.0000000625rem , -1.1607142143rem  +  5.8035713839vw , 8.125rem )) {
     .betnero_nuove .betnero_button {
-      margin-bottom: calc(0.0000000625rem + 8.1249999375 * (100vw - 20rem) / 47);
+      margin-bottom: calc(0.0000000625rem + 8.1249999375 * (100vw - 20rem) / 140);
     }
 }
 
-@supports (margin-bottom: clamp( 0.0000000625rem , -2.3936169322rem  +  11.9680849734vw , 5.625rem )) {
+@supports (margin-bottom: clamp( 0.0000000625rem , -0.8035713571rem  +  4.0178570982vw , 5.625rem )) {
     .betnero_scommesse .betnero_button {
-      margin-bottom: clamp( 0.0000000625rem , -2.3936169322rem  +  11.9680849734vw , 5.625rem );
+      margin-bottom: clamp( 0.0000000625rem , -0.8035713571rem  +  4.0178570982vw , 5.625rem );
     }
 }
 
-@supports not (margin-bottom: clamp( 0.0000000625rem , -2.3936169322rem  +  11.9680849734vw , 5.625rem )) {
+@supports not (margin-bottom: clamp( 0.0000000625rem , -0.8035713571rem  +  4.0178570982vw , 5.625rem )) {
     .betnero_scommesse .betnero_button {
-      margin-bottom: calc(0.0000000625rem + 5.6249999375 * (100vw - 20rem) / 47);
+      margin-bottom: calc(0.0000000625rem + 5.6249999375 * (100vw - 20rem) / 140);
     }
 }
 
-@supports (margin-bottom: clamp( 0.0000000625rem , -2.7925531024rem  +  13.9627658245vw , 6.5625rem )) {
+@supports (margin-bottom: clamp( 0.0000000625rem , -0.9374999286rem  +  4.6874999554vw , 6.5625rem )) {
     .betnero_casino .betnero_button {
-      margin-bottom: clamp( 0.0000000625rem , -2.7925531024rem  +  13.9627658245vw , 6.5625rem );
+      margin-bottom: clamp( 0.0000000625rem , -0.9374999286rem  +  4.6874999554vw , 6.5625rem );
     }
 }
 
-@supports not (margin-bottom: clamp( 0.0000000625rem , -2.7925531024rem  +  13.9627658245vw , 6.5625rem )) {
+@supports not (margin-bottom: clamp( 0.0000000625rem , -0.9374999286rem  +  4.6874999554vw , 6.5625rem )) {
     .betnero_casino .betnero_button {
-      margin-bottom: calc(0.0000000625rem + 6.5624999375 * (100vw - 20rem) / 47);
+      margin-bottom: calc(0.0000000625rem + 6.5624999375 * (100vw - 20rem) / 140);
     }
 }
 }
@@ -2691,6 +2554,15 @@ footer {
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
     background: #3fec39;
+  }
+
+  .betnero_header .betnero_menu__search a:hover {
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    -webkit-transform: scale(1.08);
+        -ms-transform: scale(1.08);
+            transform: scale(1.08);
   }
 
   .betnero_promotions .swiper-button-prev:hover {
