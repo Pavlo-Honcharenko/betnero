@@ -242,6 +242,11 @@ body {
   background: #1C2747;
 }
 
+[data-simplebar] {
+  -ms-flex-wrap: nowrap !important;
+      flex-wrap: nowrap !important;
+}
+
 /* Для полосы прокрутки на всей странице */
 
 ::-webkit-scrollbar {
@@ -521,7 +526,7 @@ h4 {
   width: 100%;
   height: 100%;
   background: #0199ED;
-  z-index: 99;
+  z-index: -1;
 }
 
 .betnero_header__container {
@@ -638,7 +643,8 @@ h4 {
       -ms-flex-align: center;
           align-items: center;
   margin: auto auto 0;
-  padding-top: 30px;
+  padding-top: 50px;
+  padding-bottom: 100px;
 }
 
 .betnero_header form {
@@ -721,6 +727,17 @@ h4 {
 
 .betnero_header form .input[placeholder]:not([data-placeholder-nohiden]):focus::placeholder {
   opacity: 0;
+}
+
+.betnero_header .betnero_menu::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85px;
+  background: #0199ED;
 }
 
 .betnero_header .betnero_menu__body {
@@ -888,6 +905,10 @@ h4 {
   left: 0 !important;
 }
 
+.betnero_menu-open .betnero_header::after {
+  z-index: 99;
+}
+
 .betnero_logged-in {
   display: none;
 }
@@ -1005,7 +1026,7 @@ footer {
   border-right: 2px solid #FFFFFF;
 }
 
-.responsive-block {
+.betnero_bottom-block {
   display: none;
   position: fixed;
   bottom: 0;
@@ -1013,7 +1034,7 @@ footer {
   width: 100%;
   height: 69px;
   background-color: #0199ED;
-  z-index: 99;
+  z-index: 100;
 }
 
 .betnero_top-line__container {
@@ -1034,13 +1055,13 @@ footer {
 
 .betnero_promotions .swiper-button-prev {
   position: absolute;
-  top: 22%;
+  top: calc(50% - 18px);
   left: 0;
 }
 
 .betnero_promotions .swiper-button-next {
   position: absolute;
-  top: 22%;
+  top: calc(50% - 18px);
   right: 0;
 }
 
@@ -1085,37 +1106,37 @@ footer {
   margin-bottom: 60px;
 }
 
-.betnero_promotions h1.betnero_promotions__title,
+.betnero_promotions betnero_promotions__title,
 .betnero_promotions .betnero_promotions__title {
   color: #FFF;
 }
 
-.betnero_promotions h1.betnero_promotions__title:not(:last-child),
+.betnero_promotions betnero_promotions__title:not(:last-child),
 .betnero_promotions .betnero_promotions__title:not(:last-child) {
   margin-bottom: 1.875rem;
 }
 
 .betnero_promotions .betnero_promotions__first-line {
   font-weight: 700;
-  font-size: 66px;
+  font-size: 30px;
   display: block;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .betnero_promotions .betnero_promotions__second-line {
   display: block;
+  font-size: 60px;
   margin-bottom: 7px;
 }
 
 .betnero_promotions .betnero_promotions__thirt-line {
   font-weight: 700;
-  font-size: 68px;
+  font-size: 60px;
   line-height: 100%;
 }
 
 .betnero_promotions .betnero_promotions__thirt-line .betnero_euro {
   font-weight: 500;
-  font-size: 60px;
   line-height: 113%;
 }
 
@@ -1149,19 +1170,16 @@ footer {
 
 .betnero_euro {
   font-weight: 500;
-  font-size: 95px;
   line-height: 113%;
 }
 
 .betnero_numbers {
   font-weight: 700;
-  font-size: 110px;
   line-height: 97%;
 }
 
 .betnero_plus {
   font-weight: 500;
-  font-size: 110px;
   line-height: 61%;
   color: #73FC6F;
 }
@@ -1313,7 +1331,39 @@ footer {
 }
 
 .betnero_provider__image-ibg {
-  padding-bottom: 240px;
+  height: 240px;
+}
+
+.betnero_provider__image-ibg img.betnero__provider-bg {
+  -o-object-fit: initial;
+     object-fit: initial;
+}
+
+.betnero_provider__slider .betnero_banner-bg:not(:last-child) {
+  -webkit-transform: translate(20px, 0);
+      -ms-transform: translate(20px, 0);
+          transform: translate(20px, 0);
+}
+
+.betnero_provider__wrapper {
+  padding: 0 20px;
+}
+
+.betnero_provider__slide {
+  padding: 20px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 242px;
 }
 
 .betnero_provider .betnero_banner-bg {
@@ -1490,6 +1540,262 @@ footer {
   display: none !important;
 }
 
+[data-simplebar] {
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.simplebar-wrapper {
+  overflow: hidden;
+  width: inherit;
+  height: inherit;
+  max-width: inherit;
+  max-height: inherit;
+}
+
+.simplebar-mask {
+  direction: inherit;
+  position: absolute;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: auto !important;
+  height: auto !important;
+  z-index: 0;
+}
+
+.simplebar-offset {
+  direction: inherit !important;
+  -webkit-box-sizing: inherit !important;
+          box-sizing: inherit !important;
+  resize: none !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.simplebar-content-wrapper {
+  direction: inherit;
+  -webkit-box-sizing: border-box !important;
+          box-sizing: border-box !important;
+  position: relative;
+  display: block;
+  height: 100%;
+  /* Required for horizontal native scrollbar to not appear if parent is taller than natural height */
+  width: auto;
+  max-width: 100%;
+  /* Not required for horizontal scroll to trigger */
+  max-height: 100%;
+  /* Needed for vertical scroll to trigger */
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.simplebar-content-wrapper::-webkit-scrollbar,
+.simplebar-hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.simplebar-content:before,
+.simplebar-content:after {
+  content: " ";
+  display: table;
+}
+
+.simplebar-placeholder {
+  max-height: 100%;
+  max-width: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.simplebar-height-auto-observer-wrapper {
+  -webkit-box-sizing: inherit !important;
+          box-sizing: inherit !important;
+  height: 100%;
+  width: 100%;
+  max-width: 1px;
+  position: relative;
+  float: left;
+  max-height: 1px;
+  overflow: hidden;
+  z-index: -1;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+  -webkit-box-flex: inherit;
+      -ms-flex-positive: inherit;
+          flex-grow: inherit;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+}
+
+.simplebar-height-auto-observer {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  display: block;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1000%;
+  width: 1000%;
+  min-height: 1px;
+  min-width: 1px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.simplebar-track {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+[data-simplebar].simplebar-dragging {
+  pointer-events: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+[data-simplebar].simplebar-dragging .simplebar-content {
+  pointer-events: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+[data-simplebar].simplebar-dragging .simplebar-track {
+  pointer-events: all;
+}
+
+.simplebar-scrollbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  min-height: 10px;
+}
+
+.simplebar-scrollbar:before {
+  position: absolute;
+  content: "";
+  background: black;
+  border-radius: 7px;
+  left: 2px;
+  right: 2px;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s 0.5s linear;
+  -o-transition: opacity 0.2s 0.5s linear;
+  transition: opacity 0.2s 0.5s linear;
+}
+
+.simplebar-scrollbar.simplebar-visible:before {
+  opacity: 0.5;
+  -webkit-transition-delay: 0s;
+       -o-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}
+
+.simplebar-track.simplebar-vertical {
+  top: 0;
+  width: 11px;
+}
+
+.simplebar-scrollbar:before {
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  right: 2px;
+}
+
+.simplebar-track.simplebar-horizontal {
+  left: 0;
+  height: 11px;
+}
+
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+  right: auto;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  min-height: 0;
+  min-width: 10px;
+  width: auto;
+}
+
+/* Rtl support */
+
+[data-simplebar-direction=rtl] .simplebar-track.simplebar-vertical {
+  right: auto;
+  left: 0;
+}
+
+.simplebar-dummy-scrollbar-size {
+  direction: rtl;
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  height: 500px;
+  width: 500px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  -ms-overflow-style: scrollbar !important;
+}
+
+.simplebar-dummy-scrollbar-size > div {
+  width: 200%;
+  height: 200%;
+  margin: 10px 0;
+}
+
+.simplebar-hide-scrollbar {
+  position: fixed;
+  left: 0;
+  visibility: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 @media (min-width: 26.25em) {
   .betnero_footer__navigation ul li {
     padding: 0 7px;
@@ -1507,7 +1813,6 @@ footer {
 
   .betnero_header .betnero_menu__body {
     max-width: 480px;
-    margin: auto;
   }
 
   .betnero_footer__info {
@@ -1523,6 +1828,13 @@ footer {
     padding: 11px 40px 13px;
   }
 
+  .betnero_provider .betnero_provider__banners {
+    width: 112%;
+    margin: 30px 0 30px -6%;
+  }
+}
+
+@media (min-width: 37.5em) {
   .betnero_provider .betnero_provider__banners {
     width: 100%;
     margin: 30px 0 30px 0;
@@ -1621,14 +1933,6 @@ footer {
     line-height: 16px;
   }
 
-  .betnero_promotions .swiper-button-prev {
-    top: 42.3%;
-  }
-
-  .betnero_promotions .swiper-button-next {
-    top: 42.3%;
-  }
-
   .betnero_promotions__row {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1668,12 +1972,7 @@ footer {
 
   .betnero_provider .betnero_provider__banners {
     width: 100%;
-    height: initial;
     margin: 30px 0;
-  }
-
-  .betnero_provider__image-ibg {
-    padding-bottom: 19.4%;
   }
 
   .betnero_provider .betnero_banner-bg {
@@ -1726,7 +2025,7 @@ footer {
   }
 
   .betnero_header__container {
-    padding: 40px 25px;
+    padding: 35px 25px 25px;
   }
 
   .betnero_header .betnero_header__mobile-line {
@@ -1764,6 +2063,7 @@ footer {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
+    margin-top: auto;
   }
 
   .betnero_header .betnero_header__logo-mobile {
@@ -1989,54 +2289,19 @@ footer {
   .betnero_casino .betnero_button {
     margin-bottom: 6.5625rem;
   }
+
+  .betnero_provider__slide {
+    padding-left: 1.875rem;
+  }
+
+  .betnero_provider__slide {
+    padding-right: 1.875rem;
+  }
 }
 
 @media (max-width: 62em) {
   .betnero_promotions__description {
     font-size: 1.25rem;
-  }
-
-  .betnero_promotions .betnero_promotions__first-line {
-    font-size: 2.5rem;
-  }
-
-  .betnero_promotions .betnero_promotions__thirt-line {
-    font-size: 2.25rem;
-  }
-
-  .betnero_promotions .betnero_promotions__thirt-line .betnero_euro {
-    font-size: 2.25rem;
-  }
-
-  .betnero_euro {
-    font-size: 4.6875rem;
-  }
-
-  .betnero_numbers {
-    font-size: 4.6875rem;
-  }
-
-  .betnero_plus {
-    font-size: 4.6875rem;
-  }
-}
-
-@media (max-width: 485px) {
-  .responsive-block {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 5px 25px;
-  }
-
-  .responsive-block.betnero_hide-mobile-footer {
-    display: none;
   }
 }
 
@@ -2071,6 +2336,14 @@ footer {
 
   .betnero_casino .betnero_button {
     margin-bottom: 0.0000000625rem;
+  }
+
+  .betnero_provider__slide {
+    padding-left: 0.3125rem;
+  }
+
+  .betnero_provider__slide {
+    padding-right: 0.3125rem;
   }
 }
 
@@ -2112,6 +2385,29 @@ footer {
     -webkit-transition: all 0.4s ease 0s;
     -o-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s;
+  }
+
+  .betnero_header .betnero_menu__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0 auto;
+    height: 100%;
+  }
+
+  .betnero_header .betnero_menu__body .betnero_menu__search {
+    display: none;
+  }
+
+  .betnero_header .betnero_menu__body .spollers {
+    width: 100%;
   }
 
   .betnero_header .betnero_menu__search {
@@ -2178,6 +2474,23 @@ footer {
             transform: rotate(45deg);
   }
 
+  .betnero_bottom-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 5px 25px;
+  }
+
+  .betnero_bottom-block.betnero_hide-mobile-footer {
+    display: none;
+  }
+
   .betnero_promotions__container {
     padding-top: 150px;
   }
@@ -2202,14 +2515,9 @@ footer {
     text-align: center;
   }
 
-  .betnero_promotions h1.betnero_promotions__title,
+  .betnero_promotions betnero_promotions__title,
   .betnero_promotions .betnero_promotions__title {
     text-align: center;
-  }
-
-  .betnero_provider__image-ibg img {
-    -o-object-fit: initial;
-       object-fit: initial;
   }
 }
 
@@ -2228,6 +2536,21 @@ footer {
 
   .betnero_bonus__button {
     font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .betnero_bg-color-1::after {
+    background: url("../img/bg-decor-1-mobile.png") 0 0 no-repeat;
+  }
+
+  .betnero_bg-color-2::after {
+    background: url("../img/bg-decor-2-mobile.png") 0 0 no-repeat;
+  }
+
+  .betnero_bg-color-1::after,
+  .betnero_bg-color-2::after {
+    background-size: 100% 40px;
   }
 }
 
@@ -2264,26 +2587,6 @@ footer {
 @media (max-width: 23.4375em) {
   .betnero_promotions__description {
     margin-bottom: 22px;
-  }
-
-  .betnero_promotions .betnero_promotions__first-line {
-    font-size: 34px;
-  }
-
-  .betnero_promotions .betnero_promotions__thirt-line {
-    font-size: 32px;
-  }
-
-  .betnero_promotions .betnero_promotions__thirt-line .betnero_euro {
-    font-size: 32px;
-  }
-
-  .betnero_euro {
-    font-size: 60px;
-  }
-
-  .betnero_numbers {
-    font-size: 60px;
   }
 
   .betnero_plus {
@@ -2387,6 +2690,30 @@ footer {
       margin-bottom: calc(0.0000000625rem + 6.5624999375 * (100vw - 20rem) / 140);
     }
 }
+
+@supports (padding-left: clamp( 0.3125rem , 0.0892857143rem  +  1.1160714286vw , 1.875rem )) {
+    .betnero_provider__slide {
+      padding-left: clamp( 0.3125rem , 0.0892857143rem  +  1.1160714286vw , 1.875rem );
+    }
+}
+
+@supports not (padding-left: clamp( 0.3125rem , 0.0892857143rem  +  1.1160714286vw , 1.875rem )) {
+    .betnero_provider__slide {
+      padding-left: calc(0.3125rem + 1.5625 * (100vw - 20rem) / 140);
+    }
+}
+
+@supports (padding-right: clamp( 0.3125rem , 0.0892857143rem  +  1.1160714286vw , 1.875rem )) {
+    .betnero_provider__slide {
+      padding-right: clamp( 0.3125rem , 0.0892857143rem  +  1.1160714286vw , 1.875rem );
+    }
+}
+
+@supports not (padding-right: clamp( 0.3125rem , 0.0892857143rem  +  1.1160714286vw , 1.875rem )) {
+    .betnero_provider__slide {
+      padding-right: calc(0.3125rem + 1.5625 * (100vw - 20rem) / 140);
+    }
+}
 }
 
 @media (min-width: 47.9375em) and (max-width: 90em) {
@@ -2449,78 +2776,6 @@ footer {
 @supports not (font-size: clamp( 1.25rem , -0.9642857143rem  +  3.5714285714vw , 2.25rem )) {
     .betnero_promotions__description {
       font-size: calc(1.25rem + 1 * (100vw - 62rem) / 28);
-    }
-}
-
-@supports (font-size: clamp( 2.5rem , -1.0982142857rem  +  5.8035714286vw , 4.125rem )) {
-    .betnero_promotions .betnero_promotions__first-line {
-      font-size: clamp( 2.5rem , -1.0982142857rem  +  5.8035714286vw , 4.125rem );
-    }
-}
-
-@supports not (font-size: clamp( 2.5rem , -1.0982142857rem  +  5.8035714286vw , 4.125rem )) {
-    .betnero_promotions .betnero_promotions__first-line {
-      font-size: calc(2.5rem + 1.625 * (100vw - 62rem) / 28);
-    }
-}
-
-@supports (font-size: clamp( 2.25rem , -2.1785714286rem  +  7.1428571429vw , 4.25rem )) {
-    .betnero_promotions .betnero_promotions__thirt-line {
-      font-size: clamp( 2.25rem , -2.1785714286rem  +  7.1428571429vw , 4.25rem );
-    }
-}
-
-@supports not (font-size: clamp( 2.25rem , -2.1785714286rem  +  7.1428571429vw , 4.25rem )) {
-    .betnero_promotions .betnero_promotions__thirt-line {
-      font-size: calc(2.25rem + 2 * (100vw - 62rem) / 28);
-    }
-}
-
-@supports (font-size: clamp( 2.25rem , -1.0714285714rem  +  5.3571428571vw , 3.75rem )) {
-    .betnero_promotions .betnero_promotions__thirt-line .betnero_euro {
-      font-size: clamp( 2.25rem , -1.0714285714rem  +  5.3571428571vw , 3.75rem );
-    }
-}
-
-@supports not (font-size: clamp( 2.25rem , -1.0714285714rem  +  5.3571428571vw , 3.75rem )) {
-    .betnero_promotions .betnero_promotions__thirt-line .betnero_euro {
-      font-size: calc(2.25rem + 1.5 * (100vw - 62rem) / 28);
-    }
-}
-
-@supports (font-size: clamp( 4.6875rem , 1.9196428571rem  +  4.4642857143vw , 5.9375rem )) {
-    .betnero_euro {
-      font-size: clamp( 4.6875rem , 1.9196428571rem  +  4.4642857143vw , 5.9375rem );
-    }
-}
-
-@supports not (font-size: clamp( 4.6875rem , 1.9196428571rem  +  4.4642857143vw , 5.9375rem )) {
-    .betnero_euro {
-      font-size: calc(4.6875rem + 1.25 * (100vw - 62rem) / 28);
-    }
-}
-
-@supports (font-size: clamp( 4.6875rem , -0.15625rem  +  7.8125vw , 6.875rem )) {
-    .betnero_numbers {
-      font-size: clamp( 4.6875rem , -0.15625rem  +  7.8125vw , 6.875rem );
-    }
-}
-
-@supports not (font-size: clamp( 4.6875rem , -0.15625rem  +  7.8125vw , 6.875rem )) {
-    .betnero_numbers {
-      font-size: calc(4.6875rem + 2.1875 * (100vw - 62rem) / 28);
-    }
-}
-
-@supports (font-size: clamp( 4.6875rem , -0.15625rem  +  7.8125vw , 6.875rem )) {
-    .betnero_plus {
-      font-size: clamp( 4.6875rem , -0.15625rem  +  7.8125vw , 6.875rem );
-    }
-}
-
-@supports not (font-size: clamp( 4.6875rem , -0.15625rem  +  7.8125vw , 6.875rem )) {
-    .betnero_plus {
-      font-size: calc(4.6875rem + 2.1875 * (100vw - 62rem) / 28);
     }
 }
 }

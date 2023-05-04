@@ -6,8 +6,8 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<!-- <link rel="stylesheet" href="css/style.min.css?_v=20230504124043"> -->
-	<link rel="stylesheet" href="css/style.css?_v=20230504124043">
+	<!-- <link rel="stylesheet" href="css/style.min.css?_v=20230505005410"> -->
+	<link rel="stylesheet" href="css/style.css?_v=20230505005410">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -16,6 +16,16 @@
 	<div class="betnero_wrapper">
 		<header class="betnero_header">
 			<div id="betnero_header_simplebar" class="betnero_header__container">
+				<script>
+					var headerElement = document.querySelector('#betnero_header_simplebar');
+					window.addEventListener('resize', function() {
+						if (window.innerWidth > 992) {
+							headerElement.setAttribute('data-simplebar', '');
+						} else {
+							headerElement.removeAttribute('data-simplebar', '');
+						}
+					});
+				</script>
 
 				<div class="betnero_header__mobile-line">
 					<button type="button" class="betnero_icon-menu"><span></span></button>
@@ -177,12 +187,12 @@
 									<div class="betnero_promotions__col-left">
 										<div class="betnero_promotions__content">
 											<div class="betnero_promotions__description">BONUS BENVENUTO</div>
-											<h1 class="betnero_promotions__title">
+											<h2 class="betnero_promotions__title">
 												<span class="betnero_promotions__first-line">FINO A </span>
 												<span class="betnero_promotions__second-line"><span class="betnero_euro">€</span><span class="betnero_numbers">1300</span><span class="betnero_plus">+</span></span>
 												<span class="betnero_promotions__thirt-line"><span class="betnero_euro">€</span>10
 													GRATIS</span>
-											</h1>
+											</h2>
 											<a href="" class="betnero_promotions__button-registrati">REGISTRATI</a>
 										</div>
 									</div>
@@ -199,10 +209,13 @@
 								<div class="betnero_promotions__row">
 									<div class="betnero_promotions__col-left">
 										<div class="betnero_promotions__content">
+											<div class="betnero_promotions__description">Second slide</div>
 											<h2 class="betnero_promotions__title">
-												Il titolo della seconda diapositiva dovrebbe essere H2!
+												<span class="betnero_promotions__first-line">First line</span>
+												<span class="betnero_promotions__second-line">Second line</span>
+												<span class="betnero_promotions__thirt-line">Third line</span>
 											</h2>
-											<a href="" class="betnero_promotions__button-registrati">text</a>
+											<a href="" class="betnero_promotions__button-registrati">REGISTRATI</a>
 										</div>
 									</div>
 									<div class="betnero_promotions__col-right">
@@ -436,68 +449,165 @@
 
 						<div class="betnero_provider__banners">
 							<div class="betnero_provider__image-ibg">
-								<img src="img/banners/bg-banners.png" alt="bg">
+								<img class="betnero__provider-bg" src="img/banners/bg-banners.png" alt="bg">
 							</div>
+
 							<div class="betnero_banners-hidden">
-								<div class="betnero_provider__line-1">
-									<div class="betnero_banner-bg">
-										<img src="img/banners/provider-01.svg" alt="banner">
-									</div>
-									<div class="betnero_banner-bg">
-										<img src="img/banners/provider-02.svg" alt="banner">
-									</div>
-									<div class="betnero_banner-bg">
-										<img src="img/banners/provider-03.svg" alt="banner">
-									</div>
-									<div class="betnero_banner-bg">
-										<img src="img/banners/provider-04.svg" alt="banner">
-									</div>
-									<div class="betnero_banner-bg">
-										<img src="img/banners/provider-05.svg" alt="banner">
-									</div>
-									<div class="betnero_banner-bg">
-										<img src="img/banners/provider-06.svg" alt="banner">
-									</div>
-									<div class="betnero_banner-bg">
-										<img src="img/banners/provider-07.svg" alt="banner">
-									</div>
-									<div class="betnero_banner-bg">
-										<img src="img/banners/provider-08.svg" alt="banner">
-									</div>
-									<div class="betnero_banner-bg">
-										<img src="img/banners/provider-01.svg" alt="banner">
-									</div>
-								</div>
-								<div class="betnero_provider__line-2">
-									<div class="betnero_banner-bg">
-										<img src="img/banners/provider-05.svg" alt="banner">
-									</div>
-									<div class="betnero_banner-bg">
-										<img src="img/banners/provider-06.svg" alt="banner">
-									</div>
-									<div class="betnero_banner-bg">
-										<img src="img/banners/provider-07.svg" alt="banner">
-									</div>
-									<div class="betnero_banner-bg">
-										<img src="img/banners/provider-08.svg" alt="banner">
-									</div>
-									<div class="betnero_banner-bg">
-										<img src="img/banners/provider-01.svg" alt="banner">
-									</div>
-									<div class="betnero_banner-bg">
-										<img src="img/banners/provider-02.svg" alt="banner">
-									</div>
-									<div class="betnero_banner-bg">
-										<img src="img/banners/provider-03.svg" alt="banner">
-									</div>
-									<div class="betnero_banner-bg">
-										<img src="img/banners/provider-04.svg" alt="banner">
-									</div>
-									<div class="betnero_banner-bg">
-										<img src="img/banners/provider-05.svg" alt="banner">
+								<!-- SLider wrapper -->
+								<div class="betnero_provider__slider swiper">
+									<!-- The moving part of the slider -->
+									<div class="betnero_provider__wrapper swiper-wrapper">
+										<!-- Slide -->
+										<div class="betnero_provider__slide swiper-slide">
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-01.svg" alt="banner">
+											</div>
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-05.svg" alt="banner">
+											</div>
+										</div>
+										<!-- Slide -->
+										<div class="betnero_provider__slide swiper-slide">
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-02.svg" alt="banner">
+											</div>
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-06.svg" alt="banner">
+											</div>
+										</div>
+										<!-- Slide -->
+										<div class="betnero_provider__slide swiper-slide">
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-03.svg" alt="banner">
+											</div>
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-07.svg" alt="banner">
+											</div>
+										</div>
+										<!-- Slide -->
+										<div class="betnero_provider__slide swiper-slide">
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-04.svg" alt="banner">
+											</div>
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-08.svg" alt="banner">
+											</div>
+										</div>
+										<!-- Slide -->
+										<div class="betnero_provider__slide swiper-slide">
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-05.svg" alt="banner">
+											</div>
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-01.svg" alt="banner">
+											</div>
+										</div>
+										<!-- Slide -->
+										<div class="betnero_provider__slide swiper-slide">
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-06.svg" alt="banner">
+											</div>
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-02.svg" alt="banner">
+											</div>
+										</div>
+										<!-- Slide -->
+										<div class="betnero_provider__slide swiper-slide">
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-07.svg" alt="banner">
+											</div>
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-03.svg" alt="banner">
+											</div>
+										</div>
+										<!-- Slide -->
+										<div class="betnero_provider__slide swiper-slide">
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-08.svg" alt="banner">
+											</div>
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-04.svg" alt="banner">
+											</div>
+										</div>
+
+										<!-- Slide -->
+										<div class="betnero_provider__slide swiper-slide">
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-01.svg" alt="banner">
+											</div>
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-05.svg" alt="banner">
+											</div>
+										</div>
+										<!-- Slide -->
+										<div class="betnero_provider__slide swiper-slide">
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-02.svg" alt="banner">
+											</div>
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-06.svg" alt="banner">
+											</div>
+										</div>
+										<!-- Slide -->
+										<div class="betnero_provider__slide swiper-slide">
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-03.svg" alt="banner">
+											</div>
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-07.svg" alt="banner">
+											</div>
+										</div>
+										<!-- Slide -->
+										<div class="betnero_provider__slide swiper-slide">
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-04.svg" alt="banner">
+											</div>
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-08.svg" alt="banner">
+											</div>
+										</div>
+										<!-- Slide -->
+										<div class="betnero_provider__slide swiper-slide">
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-05.svg" alt="banner">
+											</div>
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-01.svg" alt="banner">
+											</div>
+										</div>
+										<!-- Slide -->
+										<div class="betnero_provider__slide swiper-slide">
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-06.svg" alt="banner">
+											</div>
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-02.svg" alt="banner">
+											</div>
+										</div>
+										<!-- Slide -->
+										<div class="betnero_provider__slide swiper-slide">
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-07.svg" alt="banner">
+											</div>
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-03.svg" alt="banner">
+											</div>
+										</div>
+										<!-- Slide -->
+										<div class="betnero_provider__slide swiper-slide">
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-08.svg" alt="banner">
+											</div>
+											<div class="betnero_banner-bg">
+												<img src="img/banners/provider-04.svg" alt="banner">
+											</div>
+										</div>
+
 									</div>
 								</div>
 							</div>
+
+
 
 
 						</div>
@@ -668,7 +778,7 @@
 			</div>
 		</footer>
 
-		<div class="responsive-block">
+		<div class="betnero_bottom-block">
 			<a href="">
 				<img src="img/icons/ball.svg" alt="ball">
 			</a>
@@ -686,7 +796,7 @@
 
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20230504124043"></script>
+	<script src="js/app.min.js?_v=20230505005410"></script>
 </body>
 
 </html>
