@@ -4374,6 +4374,13 @@
                 if (responsiveBlock) if (footerRect.top < window.innerHeight) responsiveBlock.classList.add("betnero_hide-mobile-footer"); else responsiveBlock.classList.remove("betnero_hide-mobile-footer");
             }));
         }));
+        const betneroSearchInput = document.getElementById("betnero_search_input");
+        const betneroSubmitBtn = document.getElementById("betnero_search_submit");
+        const betneroResetBtn = document.getElementById("betnero_search_reset");
+        if (betneroSubmitBtn) betneroSubmitBtn.addEventListener("click", (event => {}));
+        if (betneroResetBtn) betneroResetBtn.addEventListener("click", (() => {
+            betneroSearchInput.value = "";
+        }));
         window["FLS"] = false;
         isWebp();
         menuInit();

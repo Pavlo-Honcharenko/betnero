@@ -6,8 +6,8 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<!-- <link rel="stylesheet" href="css/style.min.css?_v=20230505005410"> -->
-	<link rel="stylesheet" href="css/style.css?_v=20230505005410">
+	<!-- <link rel="stylesheet" href="css/style.min.css?_v=20230505033835"> -->
+	<link rel="stylesheet" href="css/style.css?_v=20230505033835">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -16,12 +16,25 @@
 	<div class="betnero_wrapper">
 		<header class="betnero_header">
 			<div id="betnero_header_simplebar" class="betnero_header__container">
+				<script>
+					var headerElement = document.querySelector('#betnero_header_simplebar');
+					if (window.innerWidth > 992) {
+						headerElement.setAttribute('data-simplebar', '');
+					}
+					window.addEventListener('resize', function() {
+						if (window.innerWidth > 992) {
+							headerElement.setAttribute('data-simplebar', '');
+						} else {
+							headerElement.removeAttribute('data-simplebar', '');
+						}
+					});
+				</script>
 
 				<div class="betnero_header__mobile-line">
 					<button type="button" class="betnero_icon-menu"><span></span></button>
 					<a href="" class="betnero_header__logo"><img src="img/logo.svg" alt="logo"></a>
 					<div class="betnero_menu__search">
-						<a href="">
+						<a href="search.html">
 							<img src="img/icons/search.svg" alt="search">
 						</a>
 					</div>
@@ -38,7 +51,7 @@
 
 					<nav class="betnero_menu__body">
 						<div class="betnero_menu__search">
-							<a href="">
+							<a href="search.html">
 								<img src="img/icons/search.svg" alt="search">
 								<span>Search</span>
 							</a>
@@ -786,7 +799,7 @@
 
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20230505005410"></script>
+	<script src="js/app.min.js?_v=20230505033835"></script>
 </body>
 
 </html>
