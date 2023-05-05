@@ -1258,12 +1258,11 @@ footer {
 }
 
 .betnero_bonus__slide {
-  width: 100%;
-  max-width: 320px;
+  width: 303px;
 }
 
 .betnero_bonus__card {
-  width: 100%;
+  width: 303px;
   padding: 14px 14px 44px;
   background: #0199ED;
   border-radius: 8px;
@@ -2599,10 +2598,6 @@ footer {
     padding-right: 2.1875rem;
   }
 
-  .betnero_bonus__card {
-    max-width: 15.5rem;
-  }
-
   .betnero_bonus__button {
     font-size: 0.75rem;
   }
@@ -2807,18 +2802,6 @@ footer {
 @supports not (padding-right: clamp( 2.1875rem , -1.0178306092rem  +  6.6864784547vw , 5rem )) {
     .betnero_promotions__row {
       padding-right: calc(2.1875rem + 2.8125 * (100vw - 47.9375rem) / 42.0625);
-    }
-}
-
-@supports (max-width: clamp( 15.5rem , 10.3714710253rem  +  10.6983655275vw , 20rem )) {
-    .betnero_bonus__card {
-      max-width: clamp( 15.5rem , 10.3714710253rem  +  10.6983655275vw , 20rem );
-    }
-}
-
-@supports not (max-width: clamp( 15.5rem , 10.3714710253rem  +  10.6983655275vw , 20rem )) {
-    .betnero_bonus__card {
-      max-width: calc(15.5rem + 4.5 * (100vw - 47.9375rem) / 42.0625);
     }
 }
 
