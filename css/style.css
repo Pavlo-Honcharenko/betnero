@@ -1252,6 +1252,10 @@ footer {
   padding: 50px 0 20px 0px;
 }
 
+.betnero_casino .betnero_button {
+  margin-top: 20px;
+}
+
 .betnero_bonus__slider {
   margin-top: 30px;
   margin-bottom: 40px;
@@ -1544,6 +1548,33 @@ footer {
   width: 60px;
   height: 40px;
   background: url("../img/icons/reset-button.svg") center center no-repeat;
+}
+
+.betnero_searching-results__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.betnero_searching-results__item {
+  margin: 4px 0;
+}
+
+.betnero_searching-results__item-content {
+  display: block;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.betnero_searching-results__item-content img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .swiper {
@@ -2587,6 +2618,14 @@ footer {
   .betnero_promotions .betnero_promotions__title {
     text-align: center;
   }
+
+  .betnero_nuove .betnero_button {
+    margin-top: 20px;
+  }
+
+  .betnero_scommesse .betnero_button {
+    margin-top: 20px;
+  }
 }
 
 @media (max-width: 47.9375em) {
@@ -2621,7 +2660,6 @@ footer {
 @media (max-width: 29.99875em) {
   .betnero_bonus__slider {
     width: 100%;
-    max-width: 290px;
     margin: 30px auto;
   }
 
@@ -2895,6 +2933,15 @@ footer {
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
     background: #3dee37;
+  }
+
+  .betnero_searching-results__item-content img:hover {
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
   }
 }
 
