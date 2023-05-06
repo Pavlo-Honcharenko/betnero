@@ -577,7 +577,7 @@ h4 {
   background: #0199ED;
 }
 
-.betnero_header::after {
+.betnero_header::before {
   content: "";
   display: block;
   position: absolute;
@@ -599,8 +599,6 @@ h4 {
           flex-direction: column;
   height: 100%;
   padding: 24px 17px;
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 
 .betnero_header .betnero_header__mobile-line {
@@ -617,6 +615,8 @@ h4 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+  z-index: 101;
 }
 
 .betnero_header .betnero_header__mobile-line .betnero_header__mobile-row {
@@ -809,17 +809,6 @@ h4 {
   opacity: 0;
 }
 
-.betnero_header .betnero_menu::before {
-  content: "";
-  display: block !important;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 126px;
-  background: #0199ED;
-}
-
 .betnero_header .betnero_menu__body {
   max-width: 100%;
 }
@@ -982,11 +971,28 @@ h4 {
 }
 
 .betnero_menu-open .betnero_menu {
-  left: 0 !important;
+  left: 0;
 }
 
-.betnero_menu-open .betnero_header::after {
+.betnero_menu-open .betnero_header.betnero_header_scroll::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0199ED;
   z-index: 99;
+}
+
+.betnero_menu-open .betnero_header::before {
+  z-index: 99;
+}
+
+.betnero_menu-open .betnero_header__container {
+  position: relative;
+  z-index: 100;
 }
 
 .betnero_logged-in .betnero_header__buttons {
@@ -996,6 +1002,11 @@ h4 {
 .betnero_logged-in .betnero_menu::before {
   content: "";
   height: 85px;
+}
+
+.betnero_menu-open .simplebar-content-wrapper,
+.betnero_menu-open .simplebar-mask {
+  overflow: initial !important;
 }
 
 footer {
@@ -2430,11 +2441,13 @@ footer {
     padding-left: 250px;
   }
 
-  .betnero_header::after {
+  .betnero_header::before {
     display: none;
   }
 
   .betnero_header__container {
+    overflow-x: hidden;
+    overflow-y: auto;
     padding: 35px 25px 25px;
   }
 
@@ -2887,6 +2900,18 @@ footer {
     -webkit-transition: all 0.4s ease 0s;
     -o-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s;
+  }
+
+  .betnero_header .betnero_menu::before {
+    content: "";
+    display: block !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 126px;
+    background: #0199ED;
+    z-index: 99;
   }
 
   .betnero_header .betnero_menu__body {

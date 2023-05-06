@@ -4237,6 +4237,20 @@
         if (betneroResetBtn) betneroResetBtn.addEventListener("click", (() => {
             betneroSearchInput.value = "";
         }));
+        const betneroMenu = document.querySelector(".betnero_menu");
+        const betneroMenuWidth = betneroMenu.offsetWidth;
+        if (betneroMenuWidth < 301) {
+            var headerElement = document.querySelector("#betnero_header_simplebar");
+            if (window.innerWidth > 992) headerElement.setAttribute("data-simplebar", "");
+            window.addEventListener("resize", (function() {
+                if (window.innerWidth > 992) headerElement.setAttribute("data-simplebar", ""); else headerElement.removeAttribute("data-simplebar", "");
+            }));
+        }
+        const menuBlock = document.querySelector(".betnero_menu");
+        const headerMenuBlock = document.querySelector(".betnero_header");
+        menuBlock.addEventListener("scroll", (() => {
+            if (headerMenuBlock) headerMenuBlock.classList.add("betnero_header_scroll");
+        }));
         window["FLS"] = false;
         isWebp();
         menuInit();
