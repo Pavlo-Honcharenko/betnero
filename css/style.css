@@ -219,6 +219,18 @@ h6 {
   border: 1px solid #eee;
 }
 
+[data-showmore-button] span:last-child {
+  display: none;
+}
+
+._showmore-active [data-showmore-button] span {
+  display: none;
+}
+
+._showmore-active [data-showmore-button] span:last-child {
+  display: block;
+}
+
 [class*=-ibg] {
   position: relative;
 }
@@ -509,6 +521,54 @@ h4 {
   background-color: #232F53;
 }
 
+.betnero_show-more__more {
+  color: #E9F150;
+}
+
+.betnero_show-more__more img {
+  display: inline-block;
+  margin: 8px 0 0 5px;
+}
+
+.betnero_stars {
+  color: #E9F150;
+}
+
+.betnero_yellow {
+  color: #E9F150;
+}
+
+.betnero_present {
+  width: 16px;
+}
+
+.betnero_breadcrumbs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.betnero_breadcrumbs__item {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: #2C98EF;
+}
+
+.betnero_breadcrumbs__item:not(:last-child)::after {
+  content: "/";
+  color: #FFFFFF;
+}
+
+.betnero_breadcrumbs__item a {
+  color: #8C9FCD;
+}
+
 .betnero_header {
   position: fixed;
   left: 0;
@@ -539,7 +599,8 @@ h4 {
           flex-direction: column;
   height: 100%;
   padding: 24px 17px;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .betnero_header .betnero_header__mobile-line {
@@ -750,12 +811,12 @@ h4 {
 
 .betnero_header .betnero_menu::before {
   content: "";
-  display: block;
+  display: block !important;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 85px;
+  height: 126px;
   background: #0199ED;
 }
 
@@ -928,8 +989,13 @@ h4 {
   z-index: 99;
 }
 
-.betnero_logged-in {
-  display: none;
+.betnero_logged-in .betnero_header__buttons {
+  display: none !important;
+}
+
+.betnero_logged-in .betnero_menu::before {
+  content: "";
+  height: 85px;
 }
 
 footer {
@@ -1062,6 +1128,10 @@ footer {
 
 .betnero_promotions {
   padding-bottom: 1px;
+}
+
+.betnero_promotions__title {
+  line-height: 120%;
 }
 
 .betnero_promotions__container {
@@ -1560,6 +1630,8 @@ footer {
 }
 
 .betnero_searching-results__item {
+  display: block;
+  width: 123px;
   margin: 4px 0;
 }
 
@@ -1575,6 +1647,209 @@ footer {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.betnero_promotions.betnero_promotions-small .betnero_promotions__container {
+  padding-top: 115px;
+}
+
+.betnero_promotions.betnero_promotions-small .betnero_promotions__title {
+  line-height: 150%;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.betnero_promotions.betnero_promotions-small .betnero_promotions__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+  padding: 0 35px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.betnero_promotions.betnero_promotions-small .betnero_promotions__col-left {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.betnero_promotions.betnero_promotions-small .betnero_promotions__col-right {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.betnero_promotions.betnero_promotions-small .betnero_promotions__button-registrati {
+  margin: 10px 0 0 0;
+  padding: 8px 16px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.betnero_top-description__container {
+  padding-top: 70px;
+  padding-bottom: 16px;
+}
+
+.betnero_top-description__title {
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 120%;
+  color: #FFFFFF;
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+.betnero_top-description__text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  color: #FFFFFF;
+  max-width: 800px;
+  margin-bottom: 5px;
+}
+
+.betnero_top-description__text p {
+  margin-bottom: 16px;
+}
+
+.betnero_games__container {
+  padding-top: 70px;
+  padding-bottom: 16px;
+}
+
+.betnero_games__top-line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.betnero_games__tabs {
+  width: 100%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  padding-right: 0;
+}
+
+.betnero_games__tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
+  background: url("../img/bg-tab.png") 0 0 no-repeat;
+  background-size: 100% 40px;
+}
+
+.betnero_games__tab span {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150;
+  margin: 0 16px;
+}
+
+.betnero_games__tab a span {
+  color: #8C9FCE;
+}
+
+.betnero_games .betnero_games__tab-active {
+  background: url("../img/bg-tab-active.png") 0 0 no-repeat;
+  background-size: 100% 40px;
+}
+
+.betnero_games__tab-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 40px;
+}
+
+.betnero_games .betnero_search-page-form {
+  margin-top: 16px;
+  width: 100%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+}
+
+.betnero_tabs__slider {
+  position: relative;
+}
+
+.betnero_tabs-button-prev,
+.betnero_tabs-button-next {
+  position: absolute;
+  top: 0;
+  height: 40px;
+  width: 75px;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.betnero_tabs-button-prev img,
+.betnero_tabs-button-next img {
+  height: 18px;
+  width: 11px;
+}
+
+.betnero_tabs-button-prev {
+  left: 0;
+  background: -webkit-gradient(linear, right top, left top, from(rgba(28, 39, 71, 0)), color-stop(18%, rgba(28, 39, 71, 0.8)), to(#1C2747));
+  background: -o-linear-gradient(right, rgba(28, 39, 71, 0) 0%, rgba(28, 39, 71, 0.8) 18%, #1C2747 100%);
+  background: linear-gradient(270deg, rgba(28, 39, 71, 0) 0%, rgba(28, 39, 71, 0.8) 18%, #1C2747 100%);
+}
+
+.betnero_tabs-button-next {
+  right: 0;
+  background: -webkit-gradient(linear, right top, left top, from(#1C2747), color-stop(82.29%, rgba(28, 39, 71, 0.8)), to(rgba(28, 39, 71, 0)));
+  background: -o-linear-gradient(right, #1C2747 0%, rgba(28, 39, 71, 0.8) 82.29%, rgba(28, 39, 71, 0) 100%);
+  background: linear-gradient(270deg, #1C2747 0%, rgba(28, 39, 71, 0.8) 82.29%, rgba(28, 39, 71, 0) 100%);
+}
+
+.betnero_tabs-button-prev.swiper-button-disabled,
+.betnero_tabs-button-next.swiper-button-disabled {
+  opacity: 0;
 }
 
 .swiper {
@@ -1917,6 +2192,27 @@ footer {
     width: 112%;
     margin: 30px 0 30px -6%;
   }
+
+  .betnero_promotions.betnero_promotions-small .betnero_promotions__row {
+    gap: 15px;
+  }
+
+  .betnero_promotions.betnero_promotions-small .betnero_promotions__col-left {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 25%;
+            flex: 0 1 25%;
+  }
+
+  .betnero_promotions.betnero_promotions-small .betnero_promotions__col-right {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 75%;
+            flex: 0 1 75%;
+  }
+
+  .betnero_promotions.betnero_promotions-small .betnero_promotions__button-registrati {
+    font-size: 18px;
+    margin: 15px 0 0 0;
+  }
 }
 
 @media (min-width: 37.5em) {
@@ -2102,6 +2398,31 @@ footer {
   .betnero_search-page-form {
     margin: 150px 0 42px;
   }
+
+  .betnero_promotions.betnero_promotions-small .betnero_promotions__title {
+    line-height: 120%;
+  }
+
+  .betnero_promotions.betnero_promotions-small .betnero_promotions__row {
+    gap: 25px;
+  }
+
+  .betnero_games__top-line {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+
+  .betnero_games__tabs {
+    width: calc(100% - 320px);
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 75%;
+            flex: 0 1 75%;
+    padding-right: 10px;
+  }
+
+  .betnero_games .betnero_search-page-form {
+    margin: 0;
+  }
 }
 
 @media (min-width: 62.06125em) {
@@ -2272,6 +2593,51 @@ footer {
   .betnero_search-page-form {
     margin: 42px 75px;
   }
+
+  .betnero_searching-results__items {
+    margin: 0 75px;
+  }
+
+  .betnero_promotions.betnero_promotions-small .betnero_promotions__container {
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+
+  .betnero_promotions.betnero_promotions-small .betnero_promotions__button-registrati {
+    font-size: 20px;
+    margin: 20px 0 0 0;
+  }
+
+  .betnero_top-description__container {
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+
+  .betnero_games__container {
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+
+  .betnero_games__top-line {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .betnero_games__tabs {
+    width: 100%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    padding-right: 0;
+  }
+
+  .betnero_games .betnero_search-page-form {
+    margin-top: 16px;
+    width: 100%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
 }
 
 @media (min-width: 62.06125em) and (any-hover: hover) {
@@ -2311,6 +2677,33 @@ footer {
 
   .betnero_provider__line-2 {
     bottom: 10%;
+  }
+
+  .betnero_games__top-line {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+
+  .betnero_games__tabs {
+    width: calc(100% - 320px);
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 75%;
+            flex: 0 1 75%;
+    padding-right: 10px;
+  }
+
+  .betnero_games .betnero_search-page-form {
+    width: initial;
+    -webkit-box-flex: initial;
+        -ms-flex: initial;
+            flex: initial;
+    margin: 0;
+  }
+}
+
+@media (min-width: 87.5em) {
+  .betnero_promotions.betnero_promotions-small .betnero_promotions__row {
+    gap: 30px;
   }
 }
 
@@ -2363,6 +2756,10 @@ footer {
     padding-top: 6rem;
   }
 
+  .betnero_promotions__title {
+    font-size: 3.75rem;
+  }
+
   .betnero_promotions__container {
     padding-bottom: 9.125rem;
   }
@@ -2390,6 +2787,10 @@ footer {
   .betnero_provider__slide {
     padding-right: 1.875rem;
   }
+
+  .betnero_promotions.betnero_promotions-small .betnero_promotions__title {
+    font-size: 3.75rem;
+  }
 }
 
 @media (max-width: 62em) {
@@ -2409,6 +2810,10 @@ footer {
 
   .betnero_section .betnero_section__container {
     padding-top: 3.75rem;
+  }
+
+  .betnero_promotions__title {
+    font-size: 2.75rem;
   }
 
   .betnero_promotions__container {
@@ -2437,6 +2842,10 @@ footer {
 
   .betnero_provider__slide {
     padding-right: 0.3125rem;
+  }
+
+  .betnero_promotions.betnero_promotions-small .betnero_promotions__title {
+    font-size: 1rem;
   }
 }
 
@@ -2593,6 +3002,10 @@ footer {
   .betnero_promotions__container {
     padding-top: 150px;
   }
+
+  .betnero_promotions.betnero_promotions-small .betnero_promotions__container {
+    padding-top: 150px;
+  }
 }
 
 @media (max-width: 62.06125em) and (any-hover: none) {
@@ -2671,6 +3084,12 @@ footer {
     padding: 14px;
     font-size: 12px;
   }
+
+  .betnero_searching-results__items {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 @media (max-width: 26.25em) {
@@ -2730,6 +3149,18 @@ footer {
 @supports not (padding-top: clamp( 3.75rem , 3.4285714286rem  +  1.6071428571vw , 6rem )) {
     .betnero_section .betnero_section__container {
       padding-top: calc(3.75rem + 2.25 * (100vw - 20rem) / 140);
+    }
+}
+
+@supports (font-size: clamp( 2.75rem , 2.6071428571rem  +  0.7142857143vw , 3.75rem )) {
+    .betnero_promotions__title {
+      font-size: clamp( 2.75rem , 2.6071428571rem  +  0.7142857143vw , 3.75rem );
+    }
+}
+
+@supports not (font-size: clamp( 2.75rem , 2.6071428571rem  +  0.7142857143vw , 3.75rem )) {
+    .betnero_promotions__title {
+      font-size: calc(2.75rem + 1 * (100vw - 20rem) / 140);
     }
 }
 
@@ -2814,6 +3245,18 @@ footer {
 @supports not (padding-right: clamp( 0.3125rem , 0.0892857143rem  +  1.1160714286vw , 1.875rem )) {
     .betnero_provider__slide {
       padding-right: calc(0.3125rem + 1.5625 * (100vw - 20rem) / 140);
+    }
+}
+
+@supports (font-size: clamp( 1rem , 0.6071428571rem  +  1.9642857143vw , 3.75rem )) {
+    .betnero_promotions.betnero_promotions-small .betnero_promotions__title {
+      font-size: clamp( 1rem , 0.6071428571rem  +  1.9642857143vw , 3.75rem );
+    }
+}
+
+@supports not (font-size: clamp( 1rem , 0.6071428571rem  +  1.9642857143vw , 3.75rem )) {
+    .betnero_promotions.betnero_promotions-small .betnero_promotions__title {
+      font-size: calc(1rem + 2.75 * (100vw - 20rem) / 140);
     }
 }
 }
@@ -2942,6 +3385,13 @@ footer {
     -webkit-transform: scale(1.05);
         -ms-transform: scale(1.05);
             transform: scale(1.05);
+  }
+
+  .betnero_tabs-button-prev img:hover,
+  .betnero_tabs-button-next img:hover {
+    -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+            transform: scale(1.3);
   }
 }
 
