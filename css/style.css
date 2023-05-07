@@ -1760,6 +1760,7 @@ footer {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin-bottom: 24px;
 }
 
 .betnero_games__tabs {
@@ -1821,6 +1822,7 @@ footer {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 100%;
           flex: 0 0 100%;
+  height: 40px;
 }
 
 .betnero_tabs__slider {
@@ -1861,6 +1863,111 @@ footer {
 .betnero_tabs-button-prev.swiper-button-disabled,
 .betnero_tabs-button-next.swiper-button-disabled {
   opacity: 0;
+}
+
+.betnero_games__row {
+  margin-bottom: 24px;
+}
+
+.betnero_games__row_rubric {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.betnero_games__thumb {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.betnero_games__thumb img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.betnero_small-thumbs .betnero_games__thumb {
+  width: 123px;
+  height: 164px;
+}
+
+.betnero_high-thumbs .betnero_games__thumb {
+  width: 200px;
+  height: 267px;
+  border-radius: 6px;
+}
+
+.betnero_wide-thumbs .betnero_games__thumb {
+  width: 254px;
+  height: 164px;
+  border-radius: 6px;
+}
+
+.betnero_info-block__container {
+  padding-top: 70px;
+  padding-bottom: 16px;
+}
+
+.betnero_info-block__text-block {
+  width: 100%;
+  padding: 16px;
+  background: #1C2747;
+  border-radius: 4px;
+}
+
+.betnero_info-block__text-block:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.betnero_info-block__text-block_title {
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 119%;
+  color: #FFFFFF;
+}
+
+.betnero_info-block__text-block_title:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.betnero_info-block__text-block p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+
+.betnero_info-block__text-block p img {
+  width: 16px;
+}
+
+.betnero_info-block__text-block_sub-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: #FFFFFF;
+}
+
+.betnero_info-block__text-block_sub-title:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.betnero_info-block__text-block_sub-title img {
+  width: 16px;
+  -webkit-transform: translate(0, 4px);
+      -ms-transform: translate(0, 4px);
+          transform: translate(0, 4px);
 }
 
 .swiper {
@@ -2650,6 +2757,11 @@ footer {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
             flex: 0 0 100%;
+  }
+
+  .betnero_info-block__container {
+    padding-left: 55px;
+    padding-right: 55px;
   }
 }
 

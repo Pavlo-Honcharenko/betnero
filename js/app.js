@@ -3213,6 +3213,17 @@
                 },
                 on: {}
             });
+            if (document.querySelector(".games-thumbs__slider")) new core(".games-thumbs__slider", {
+                modules: [ Navigation ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: "auto",
+                spaceBetween: 8,
+                autoHeight: false,
+                speed: 800,
+                loop: false,
+                on: {}
+            });
         }
         window.addEventListener("load", (function(e) {
             initSliders();
