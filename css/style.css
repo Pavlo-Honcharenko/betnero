@@ -117,6 +117,176 @@ h6 {
 Сніппет (HTML): cnt
 */
 
+.select {
+  min-width: 0;
+  position: relative;
+}
+
+.select__body {
+  position: relative;
+}
+
+.select__title {
+  color: inherit;
+  text-align: left;
+  background-color: #243156;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.select__value {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 1.875rem;
+  padding: 0 0.75rem 0 0.9375rem;
+  gap: 0.625rem;
+}
+
+.select__value > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.select__value:after {
+  content: "";
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 10px;
+          flex: 0 0 10px;
+  margin-right: 10px;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: url("../img/icons/arrow-select.svg") center center no-repeat;
+}
+
+._select-open .select__value:after {
+  -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.select__value._select-pseudo-label::before {
+  content: attr(data-pseudo-label);
+  opacity: 0.5;
+}
+
+.select__content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #8C9FCD;
+}
+
+.select__text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.select__input {
+  width: 100%;
+  background-color: transparent;
+  height: 100%;
+}
+
+.select__options {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #FFFFFF;
+  background: #3D4A71;
+  position: absolute;
+  top: calc(100% - 0.0625rem);
+  border-radius: 0 0 4px 4px;
+  min-width: 100%;
+  left: 0;
+  border-top: 0;
+  border-top: 0;
+  padding: 10px 0px 5px 0px;
+}
+
+.select__scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 12.5rem;
+}
+
+.select__option {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  padding: 5px 15px 8px;
+  color: inherit;
+}
+
+.select__option._select-selected {
+  background-color: #eee;
+}
+
+.select__row {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.select_show-top .select__options {
+  top: auto;
+  bottom: calc(100% - 0.0625rem);
+  border: 1px solid #d9d9d9;
+  border-bottom: 0;
+  border-radius: 4px 4px 0 0;
+  padding: 5px 0px 10px 0px;
+}
+
+.select._select-open .select__title {
+  background: #3D4A71;
+}
+
+._select-tag {
+  cursor: pointer;
+}
+
 .spollers {
   display: -ms-grid;
   display: grid;
@@ -1698,6 +1868,10 @@ footer {
   margin-bottom: 16px;
 }
 
+.betnero_top-description__text img {
+  width: 16px;
+}
+
 .betnero_games__container {
   padding-top: 70px;
   padding-bottom: 16px;
@@ -1713,7 +1887,6 @@ footer {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-bottom: 24px;
 }
 
 .betnero_games__tabs {
@@ -1769,13 +1942,33 @@ footer {
   height: 40px;
 }
 
-.betnero_games .betnero_search-page-form {
+.betnero_games .betnero_filters-wrapper {
   margin-top: 16px;
   width: 100%;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
   height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 16px;
+}
+
+.betnero_games .betnero_filters-wrapper .betnero_search-page-form {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.betnero_games .betnero_filters-wrapper .betnero_filters-button {
+  display: block;
 }
 
 .betnero_games .swiper {
@@ -1963,6 +2156,122 @@ footer {
   -webkit-transform: translate(0, 4px);
       -ms-transform: translate(0, 4px);
           transform: translate(0, 4px);
+}
+
+.betnero_games .betnero_games__top-line .swiper {
+  overflow: hidden;
+}
+
+.betnero_searching-results__items.betnero_subcategories {
+  margin: 0;
+}
+
+.betnero_games__filters {
+  margin-bottom: 24px;
+}
+
+.betnero_games__filters .betnero_games__filters__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.betnero_games__filters .betnero_games__filters__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4px;
+}
+
+.betnero_games__filters .betnero_games__filters__item-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.betnero_games__filters .betnero_games__filters__item-label {
+  padding: 2px 12px 2px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #8C9FCD;
+  background-color: #1C2747;
+  white-space: nowrap;
+}
+
+.betnero_games__filters-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 40px;
+  background: #73FC6F;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #1C2747;
+}
+
+.betnero_label-mobile {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: -14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+@-webkit-keyframes hide-overflow {
+  to {
+    overflow: visible;
+  }
+}
+
+@keyframes hide-overflow {
+  to {
+    overflow: visible;
+  }
 }
 
 .swiper {
@@ -2328,6 +2637,20 @@ footer {
   }
 }
 
+@media (min-width: 33.125em) {
+  .betnero_games .betnero_filters-wrapper .betnero_filters-button {
+    display: none;
+  }
+
+  .betnero_games__filters-button {
+    display: none;
+  }
+
+  .betnero_label-mobile {
+    display: none;
+  }
+}
+
 @media (min-width: 37.5em) {
   .betnero_provider .betnero_provider__banners {
     width: 100%;
@@ -2523,6 +2846,7 @@ footer {
   .betnero_games__top-line {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
+    margin-bottom: 24px;
   }
 
   .betnero_games__tabs {
@@ -2533,7 +2857,7 @@ footer {
     padding-right: 10px;
   }
 
-  .betnero_games .betnero_search-page-form {
+  .betnero_games .betnero_filters-wrapper {
     margin: 0;
   }
 }
@@ -2746,7 +3070,7 @@ footer {
     padding-right: 0;
   }
 
-  .betnero_games .betnero_search-page-form {
+  .betnero_games .betnero_filters-wrapper {
     margin-top: 16px;
     width: 100%;
     -webkit-box-flex: 0;
@@ -2812,7 +3136,7 @@ footer {
     padding-right: 10px;
   }
 
-  .betnero_games .betnero_search-page-form {
+  .betnero_games .betnero_filters-wrapper {
     width: initial;
     -webkit-box-flex: initial;
         -ms-flex: initial;
@@ -3202,6 +3526,81 @@ footer {
   }
 }
 
+@media (max-width: 33.125em) {
+  .betnero_games__filters .betnero_games__filters__col {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+
+  .betnero_games__filters .betnero_games__filters__wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .betnero_games__filters .betnero_games__filters__wrapper .betnero_games__filters__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .betnero_games__filters .betnero_games__filters__wrapper .betnero_games__filters__item .select {
+    width: 100%;
+  }
+
+  .betnero_games__filters .betnero_games__filters__item-row {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .betnero_games__filters .betnero_games__filters__item-row .betnero_games__filters__item-label,
+  .betnero_games__filters .betnero_games__filters__item-row .betnero_games__filters__item-content {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+
+  .betnero_games__filters .betnero_games__filters__item-label {
+    color: #FFF;
+    text-align: left;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    padding: 2px 12px 2px 0px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .betnero_games__filters {
+    overflow: hidden;
+  }
+
+  .betnero_games__filters .betnero_games__filters__row {
+    margin-top: -101%;
+    -webkit-transition: all 1s ease 0s;
+    -o-transition: all 1s ease 0s;
+    transition: all 1s ease 0s;
+  }
+
+  .betnero_games__filters.betnero_filters_open {
+    -webkit-animation: hide-overflow 0s linear 1s forwards;
+            animation: hide-overflow 0s linear 1s forwards;
+  }
+
+  .betnero_games__filters.betnero_filters_open .betnero_games__filters__row {
+    margin-top: 0;
+  }
+}
+
 @media (max-width: 29.99875em) {
   .betnero_bonus__slider {
     width: 100%;
@@ -3221,6 +3620,7 @@ footer {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    gap: 10px;
   }
 }
 
@@ -3446,6 +3846,10 @@ footer {
 }
 
 @media (any-hover: hover) {
+  .select__option:hover {
+    background: #d9d9d9;
+  }
+
   .betnero_section .betnero_button:hover {
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
