@@ -104,6 +104,7 @@ h6 {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   overflow: hidden;
+  padding-bottom: 60px;
 }
 
 .betnero_wrapper > * {
@@ -2178,18 +2179,19 @@ footer {
   margin-bottom: 12px;
 }
 
-.betnero_info-block__text-block_sub-title {
+.betnero_info-block__text-block .betnero_text-block_sub-title {
   font-weight: 700;
   font-size: 16px;
   line-height: 150%;
   color: #FFFFFF;
+  margin-top: 10px;
 }
 
-.betnero_info-block__text-block_sub-title:not(:last-child) {
-  margin-bottom: 12px;
+.betnero_info-block__text-block .betnero_text-block_sub-title:not(:last-child) {
+  margin-bottom: 8px;
 }
 
-.betnero_info-block__text-block_sub-title img {
+.betnero_info-block__text-block .betnero_text-block_sub-title img {
   width: 16px;
   -webkit-transform: translate(0, 4px);
       -ms-transform: translate(0, 4px);
@@ -2310,6 +2312,63 @@ footer {
   to {
     overflow: visible;
   }
+}
+
+.betnero_text-block-clear {
+  background-color: initial;
+  padding: 0;
+}
+
+.betnero_games .betnero_navigations .swiper::before,
+.betnero_games .betnero_navigations .swiper::after {
+  display: none;
+}
+
+.betnero_games .betnero_navigations .swiper {
+  overflow: hidden;
+}
+
+.betnero_navigations {
+  margin-bottom: 24px;
+}
+
+.betnero_navigations .betnero_tabs-button-prev,
+.betnero_navigations .betnero_tabs-button-next {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.betnero_navigations .betnero_tabs-button-prev img {
+  -webkit-transform: translate(-20px, 0);
+      -ms-transform: translate(-20px, 0);
+          transform: translate(-20px, 0);
+}
+
+.betnero_navigations .betnero_tabs-button-next img {
+  -webkit-transform: translate(20px, 0);
+      -ms-transform: translate(20px, 0);
+          transform: translate(20px, 0);
+}
+
+.betnero_navigations .betnero_games__tab {
+  background: url(../img/bg-tab-dark.png) 0 0 no-repeat;
+  background-size: 100% 40px;
+}
+
+.betnero_navigations .betnero_games__tab span {
+  color: #FFFFFF;
+}
+
+.betnero_navigations .betnero_games__tab-active {
+  background: url(../img/bg-tab-active.png) 0 0 no-repeat;
+  background-size: 100% 40px;
 }
 
 .swiper {
@@ -3499,6 +3558,10 @@ footer {
 
   .betnero_promotions.betnero_promotions-small .betnero_promotions__container {
     padding-top: 150px;
+  }
+
+  .betnero_first-section {
+    margin-top: 85px;
   }
 }
 
