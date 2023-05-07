@@ -2371,6 +2371,130 @@ footer {
   background-size: 100% 40px;
 }
 
+.betnero_promo-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 25px;
+}
+
+.betnero_promo-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 16px;
+  gap: 16px;
+  width: 330px;
+  background: #243156;
+  border-radius: 4px;
+}
+
+.betnero_promo-card__image {
+  border-radius: 4px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.betnero_promo-card__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.betnero_promo-card__title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
+.betnero_promo-card__text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+}
+
+.betnero_promo-card__text:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.betnero_promo-card__button {
+  margin-top: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px 16px;
+  height: 40px;
+  background: #73FC6F;
+  border-radius: 3px;
+  width: 100%;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #1C2747;
+}
+
+.betnero_promo-banner {
+  width: 100%;
+}
+
+.betnero_button-mini {
+  max-width: 358px;
+  margin-top: 20px;
+}
+
+.swiper-slide .betnero_promo-card {
+  background: #1C2747;
+}
+
+.betnero_games__thumbs .swiper {
+  overflow: visible;
+  position: relative;
+}
+
+.betnero_games__thumbs .swiper::before,
+.betnero_games__thumbs .swiper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #1C2747;
+  opacity: 0.5;
+  z-index: 10;
+}
+
+.betnero_games__thumbs .swiper::before {
+  left: -100%;
+}
+
+.betnero_games__thumbs .swiper::after {
+  left: 100%;
+}
+
 .swiper {
   overflow: hidden;
 }
@@ -3563,6 +3687,14 @@ footer {
   .betnero_first-section {
     margin-top: 85px;
   }
+
+  .betnero_promo-banner {
+    margin-top: 125px;
+  }
+
+  .betnero_logged-in .betnero_promo-banner {
+    margin-top: 85px;
+  }
 }
 
 @media (max-width: 62.06125em) and (any-hover: none) {
@@ -3602,6 +3734,11 @@ footer {
         -ms-flex-pack: center;
             justify-content: center;
     gap: 10px;
+  }
+
+  .betnero_promo-cards {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
 }
 
