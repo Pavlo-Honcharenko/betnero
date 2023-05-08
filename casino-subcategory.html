@@ -6,8 +6,8 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<!-- <link rel="stylesheet" href="css/style.min.css?_v=20230508084512"> -->
-	<link rel="stylesheet" href="css/style.css?_v=20230508084512">
+	<!-- <link rel="stylesheet" href="css/style.min.css?_v=20230508193339"> -->
+	<link rel="stylesheet" href="css/style.css?_v=20230508193339">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -72,8 +72,8 @@
 								</button>
 								<div class="spollers__body">
 									<ul>
-										<li><a href="">Più popolari</a></li>
-										<li><a href="">Slot Machine</a></li>
+										<li><a href="casino.html">Più popolari</a></li>
+										<li><a href="casino-subcategory.html">Slot Machine</a></li>
 										<li><a href="">Roulette Online</a></li>
 										<li><a href="">Blackjack Online</a></li>
 										<li><a href="">Giochi da tavolo</a></li>
@@ -92,7 +92,7 @@
 								</button>
 								<div class="spollers__body">
 									<ul>
-										<li><a href="">Più popolar</a></li>
+										<li><a href="live-casino.html">Più popolar</a></li>
 										<li><a href="">Live Ultime Uscite</a></li>
 										<li><a href="">Roulette Live</a></li>
 										<li><a href="">Blackjack Live</a></li>
@@ -125,7 +125,7 @@
 								</button>
 								<div class="spollers__body">
 									<ul>
-										<li><a href="">Lotterie</a></li>
+										<li><a href="bingo.html">Lotterie</a></li>
 										<li><a href="">Scommesse Ippica</a></li>
 										<li><a href="">Scommesse Virtuali</a></li>
 										<li><a href="">Giochi di Carte</a></li>
@@ -136,7 +136,7 @@
 						</div>
 						<!-- Spoilers end -->
 
-						<a href="" class="betnero_menu__link"><img src="img/icons/subscriptions.svg" alt="button">PROMOZIONI</a>
+						<a href="promotions.html" class="betnero_menu__link"><img src="img/icons/subscriptions.svg" alt="button">PROMOZIONI</a>
 						<a href="" class="betnero_menu__link"><img src="img/icons/subscriptions.svg" alt="button">BLOG</a>
 
 						<div class="betnero_header__logo-mobile">
@@ -269,10 +269,10 @@
 					<!-- breadcrumbs -->
 					<div class="betnero_breadcrumbs">
 						<div class="betnero_breadcrumbs__item">
-							<a href="">Home</a>
+							<a href="home.html">Home</a>
 						</div>
 						<div class="betnero_breadcrumbs__item">
-							<a href="">Casino</a>
+							<a href="casino.html">Casino</a>
 						</div>
 						<div class="betnero_breadcrumbs__item">
 							Più popolari
@@ -356,7 +356,7 @@
 								<button type="reset" id="betnero_search_reset"></button>
 							</form>
 
-							<button class="betnero_filters-button">
+							<button data-popup="#betnero_filter" class="betnero_filters-button">
 								<img src="img/icons/filters.svg" alt="filters">
 							</button>
 						</div>
@@ -441,7 +441,7 @@
 
 
 					<!-- BLOCK ITEMS -->
-					<div class="betnero_searching-results__items betnero_subcategories">
+					<div class="betnero_searching-results__items betnero_subcategories betnero_normal-cards">
 						<a href="" class="betnero_searching-results__item">
 							<div class="betnero_searching-results__item-content">
 								<img src="img/thumbs/thumb-1.jpg" alt="thumb">
@@ -930,7 +930,108 @@
 
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20230508084512"></script>
+	<div id="betnero_filter" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__text">
+
+
+
+
+
+
+
+
+					<!-- FILTERS -->
+					<div class="betnero_games__filters">
+						<div class="betnero_games__filters__row">
+							<div class="betnero_games__filters__col">
+								<div class="betnero_games__filters__wrapper">
+									<div class="betnero_label-mobile">
+										<span>Filtrare i giochi</span>
+										<button data-close type="button" class="popup__close">
+											<img class="betnero_filters_close" src="img/icons/close.svg" alt="close">
+										</button>
+
+									</div>
+
+									<div class="betnero_games__filters__item">
+										<select data-show-selected data-show name="filter-1" data-class-modif="form">
+											<option value="1" selected>Scegli il fornitore</option>
+											<option value="2">Mostra tutti</option>
+											<option value="3">Evolution</option>
+											<option value="4">Pragmatic</option>
+										</select>
+									</div>
+									<div class="betnero_games__filters__item">
+										<select data-show-selected name="filter-2" data-class-modif="form">
+											<option value="1" selected>Scegli il tema</option>
+											<option value="2">Mostra tutti</option>
+											<option value="3">Evolution</option>
+											<option value="4">Pragmatic</option>
+										</select>
+									</div>
+									<div class="betnero_games__filters__item">
+										<select data-show-selected name="filter-3" data-class-modif="form">
+											<option value="1" selected>linee di pagamento</option>
+											<option value="2">Mostra tutti</option>
+											<option value="3">Evolution</option>
+											<option value="4">Pragmatic</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="betnero_games__filters__col">
+								<div class="betnero_games__filters__wrapper">
+									<div class="betnero_games__filters__item">
+										<div class="betnero_games__filters__item-row">
+											<div class="betnero_games__filters__item-label">
+												Ordina Per
+											</div>
+											<div class="betnero_games__filters__item-content">
+												<select data-show-selected name="filter-4" data-class-modif="form">
+													<option value="1" selected>Consigliati</option>
+													<option value="2">item 2</option>
+													<option value="3">item 3</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="betnero_games__filters__item">
+										<div class="betnero_games__filters__item-row">
+											<div class="betnero_games__filters__item-label">
+												Visualizza per
+											</div>
+											<div class="betnero_games__filters__item-content">
+												<select data-show-selected name="filter-5" data-class-modif="form">
+													<option value="6" selected>6</option>
+													<option value="12">12</option>
+													<option value="18">18</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<button class="betnero_games__filters-button">Filtrare</button>
+						</div>
+					</div>
+					<!-- end of FILTERS -->
+
+
+
+
+
+
+
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20230508193339"></script>
 </body>
 
 </html>
