@@ -851,6 +851,7 @@ h4 {
 .betnero_show-more__more img {
   display: inline-block;
   margin: 8px 0 0 5px;
+  width: 8px !important;
 }
 
 .betnero_stars {
@@ -874,6 +875,7 @@ h4 {
           align-items: center;
   gap: 8px;
   margin-bottom: 16px;
+  overflow-y: auto;
 }
 
 .betnero_breadcrumbs__item {
@@ -881,6 +883,7 @@ h4 {
   font-size: 16px;
   line-height: 150%;
   color: #2C98EF;
+  white-space: nowrap;
 }
 
 .betnero_breadcrumbs__item:not(:last-child)::after {
@@ -4272,6 +4275,12 @@ footer {
   .betnero_footer__text {
     font-size: 15px;
     line-height: 22px;
+  }
+}
+
+@media (max-width: 24.375em) {
+  .betnero_contact .button {
+    width: 100%;
   }
 }
 
