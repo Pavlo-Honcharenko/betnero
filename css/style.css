@@ -118,6 +118,206 @@ h6 {
 Сніппет (HTML): cnt
 */
 
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.input {
+  border-radius: 0 !important;
+  width: 100%;
+  display: block;
+  padding: 0px 20px;
+  border: 1px solid #eee;
+}
+
+.input[placeholder]:not([data-placeholder-nohiden])::-webkit-input-placeholder {
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.input[placeholder]:not([data-placeholder-nohiden])::-moz-placeholder {
+  -moz-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.input[placeholder]:not([data-placeholder-nohiden]):-ms-input-placeholder {
+  -ms-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.input[placeholder]:not([data-placeholder-nohiden])::-ms-input-placeholder {
+  -ms-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.input[placeholder]:not([data-placeholder-nohiden])::placeholder {
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.input[placeholder]:not([data-placeholder-nohiden]):focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.input[placeholder]:not([data-placeholder-nohiden]):focus::-moz-placeholder {
+  opacity: 0;
+}
+
+.input[placeholder]:not([data-placeholder-nohiden]):focus:-ms-input-placeholder {
+  opacity: 0;
+}
+
+.input[placeholder]:not([data-placeholder-nohiden]):focus::-ms-input-placeholder {
+  opacity: 0;
+}
+
+.input[placeholder]:not([data-placeholder-nohiden]):focus::placeholder {
+  opacity: 0;
+}
+
+textarea.input {
+  resize: none;
+  padding: 0px 0px;
+}
+
+.checkbox {
+  position: relative;
+}
+
+.checkbox:not(:last-child) {
+  margin-bottom: 0.3125em;
+}
+
+.checkbox__input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.checkbox__input:focus-visible + .checkbox__label:before {
+  -webkit-box-shadow: 0 0 5px #000;
+          box-shadow: 0 0 5px #000;
+}
+
+.checkbox__input:checked + .checkbox__label:before {
+  background: #000;
+}
+
+.checkbox__label {
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  gap: 10px;
+}
+
+.checkbox__label:before {
+  content: "";
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20px;
+          flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #a7a9ac;
+}
+
+.checkbox__text {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.options__item {
+  position: relative;
+  cursor: pointer;
+}
+
+.options__item:not(:last-child) {
+  margin-bottom: 0.3125em;
+}
+
+.options__input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+}
+
+.options__input:focus-visible + .options__label:before {
+  -webkit-box-shadow: 0 0 5px #000;
+          box-shadow: 0 0 5px #000;
+}
+
+.options__input:checked + .options__label:after {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+
+.options__label {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.options__label:before {
+  content: "";
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  width: 20px;
+  height: 20px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20px;
+          flex: 0 0 20px;
+  border-radius: 50%;
+  border: 1px solid #a7a9ac;
+}
+
+.options__label:after {
+  content: "";
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #77243a;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+}
+
 .select {
   min-width: 0;
   position: relative;
@@ -2495,6 +2695,199 @@ footer {
   left: 100%;
 }
 
+.betnero_contact .betnero_contact__col-left {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 70%;
+          flex: 0 1 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+}
+
+.betnero_contact__description {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
+.betnero_contact form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+}
+
+.betnero_contact form .input,
+.betnero_contact form textarea {
+  width: 100%;
+  height: 52px;
+  background: #3D4A71;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #e9efff;
+  outline: none;
+  border: initial;
+  padding: 16px;
+}
+
+.betnero_contact form input::-webkit-input-placeholder, .betnero_contact form textarea::-webkit-input-placeholder {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #8E9BC2;
+}
+
+.betnero_contact form input::-moz-placeholder, .betnero_contact form textarea::-moz-placeholder {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #8E9BC2;
+}
+
+.betnero_contact form input:-ms-input-placeholder, .betnero_contact form textarea:-ms-input-placeholder {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #8E9BC2;
+}
+
+.betnero_contact form input::-ms-input-placeholder, .betnero_contact form textarea::-ms-input-placeholder {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #8E9BC2;
+}
+
+.betnero_contact form input::placeholder,
+.betnero_contact form textarea::placeholder {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #8E9BC2;
+}
+
+.betnero_contact__captcha {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+}
+
+.betnero_contact__captcha-text {
+  width: 100%;
+  height: 52px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 16px;
+  background: #3D4A71;
+  border-radius: 4px;
+}
+
+.betnero_contact .checkbox__label:before {
+  width: 20px;
+  height: 20px;
+  background: #3D4A71;
+  border-radius: 4px;
+}
+
+.betnero_contact ._form-focus .checkbox__label:before {
+  background-color: #0d162c;
+}
+
+.betnero_contact .checkbox__label {
+  gap: 6px;
+}
+
+.betnero_contact__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 24px;
+  gap: 16px;
+  background: #1C2747;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+}
+
+.betnero_contact__info .betnero_contact__line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+}
+
+.betnero_contact__text {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  /* or 150% */
+  color: #FFFFFF;
+}
+
+.betnero_contact .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px 16px;
+  width: 358px;
+  height: 40px;
+  background: #73FC6F;
+  border-radius: 3px;
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #1C2747;
+}
+
+.betnero_contact a {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration-line: underline;
+  color: #73FC6F;
+}
+
 .swiper {
   overflow: hidden;
 }
@@ -3080,6 +3473,13 @@ footer {
 
   .betnero_games .betnero_filters-wrapper {
     margin: 0;
+  }
+
+  .betnero_contact {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 25px;
   }
 }
 
