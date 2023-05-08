@@ -3659,8 +3659,8 @@ footer {
   }
 
   .betnero_promotions.betnero_promotions-small .betnero_promotions__container {
-    padding-left: 55px;
-    padding-right: 55px;
+    padding-left: 55px !important;
+    padding-right: 55px !important;
   }
 
   .betnero_promotions.betnero_promotions-small .betnero_promotions__button-registrati {
@@ -3669,13 +3669,13 @@ footer {
   }
 
   .betnero_top-description__container {
-    padding-left: 55px;
-    padding-right: 55px;
+    padding-left: 55px !important;
+    padding-right: 55px !important;
   }
 
   .betnero_games__container {
-    padding-left: 55px;
-    padding-right: 55px;
+    padding-left: 55px !important;
+    padding-right: 55px !important;
   }
 
   .betnero_games__top-line {
@@ -3700,8 +3700,8 @@ footer {
   }
 
   .betnero_info-block__container {
-    padding-left: 55px;
-    padding-right: 55px;
+    padding-left: 55px !important;
+    padding-right: 55px !important;
   }
 }
 
